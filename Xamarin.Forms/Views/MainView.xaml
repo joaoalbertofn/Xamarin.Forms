@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Xamarin.Forms.MainView">
+	<ContentPage.Content>
+		<StackLayout Padding="20" Spacing="5">
+			<Label Text="Qual seu nome ?" HorizontalOptions="CenterAndExpand" />
+			<Entry Text="{Binding User}" HorizontalTextAlignment="Center" />
+			<Button Command="{Binding BuscarClickedCommand}"  Text="Buscar"/>
+			<ListView ItemsSource="{Binding Items}" CachingStrategy="RecycleElement" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" >
+				<ListView.ItemTemplate>
+					<DataTemplate>
+						<ImageCell ImageSource="{Binding Image}"
+									Text="{Binding Name}"
+									Detail="{Binding Location}"/>
+					</DataTemplate>
+				</ListView.ItemTemplate>
+			</ListView>
+			
+		</StackLayout>
+	</ContentPage.Content>
+</ContentPage>
